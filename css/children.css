@@ -1,0 +1,112 @@
+/* Header */
+header {
+    background: #f2efed;
+}
+.header__logo {
+    color: #8f5e58;
+    font-weight: bold;
+}
+.header__menu-item:hover a {
+    color: #8f5e58;
+}
+.header__menu-item::before {
+    background: #8f5e58;
+}
+.main__button {
+    transition: all 0.4s;
+    border-color: #8f5e58;
+    color: #8f5e58;
+}
+.main__button-swap {
+    background: #8f5e58;
+    color: #f2efed;
+}
+.main__button-swap:hover {
+    background: #f2efed;
+    color: #8f5e58;
+}
+.header__contacts-call:hover button {
+    background: #8f5e58;
+    color: #f2efed;
+}
+.header__menu {
+    background: #f2efed;
+}
+.header__burger-button span {
+    background: #8f5e58;
+}
+
+/* Main Banner */
+.main__banner {
+    background: #f2efed;
+    font-family: "Georgia";
+}
+
+/* Why We*/
+.why__grid-item__icon {
+    background: #f2efed;
+}
+
+/* Discount */
+.discount {
+    background: #f2efed;
+}
+.discount__text {
+    color: #251e1e;
+}
+.discount__text-primary {
+    color: #cba46f;
+}
+.discount__form-input {
+    box-shadow: 0px 0px 14px 9px rgba(143, 94, 91, 0.07);
+    transition: all 0.2s;
+}
+.discount__form-input:active {
+    box-shadow: 0px 0px 14px 9px rgba(143, 94, 91, 0.15);
+}
+
+/* Catalog */
+.catalog__categories-item__icon svg path {
+    transition: all 0.4s;
+}
+.catalog__categories-item:hover .catalog__categories-item__icon svg path {
+    fill: #8f5e5b !important;
+}
+.catalog__categories-item:hover .catalog__categories-item__title {
+    font-weight: bold;
+    color: #8f5e5b;
+}
+
+/* Advantages */
+.advantages {
+    background: #f2efed;
+}
+.advantages__grid-item__icon {
+    background: #efe9d6;
+}
+
+/* Footer */
+footer {
+    background: #251e1e;
+}
+.footer__logo {
+    font-family: Georgia;
+    color: #8f5e5b;
+}
+.footer__menu-item {
+    font-family: Georgia;
+}
+
+/* Request A Call Modal */
+.request__call-container {
+    background: #f2efed;
+}
+.request__call-form__input {
+    box-shadow: 0px 0px 14px 9px rgba(143, 94, 91, 0.07);
+    transition: all 0.2s;
+}
+
+/* Text */
+.page__text-color {
+    color: #8f5e58;
+}
