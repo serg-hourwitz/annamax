@@ -123,6 +123,7 @@ body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    font-family: "Gilroy";
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -133,6 +134,10 @@ input::-webkit-inner-spin-button {
 .container {
     width: 1080px;
     margin: 0 auto;
+}
+
+button {
+    font-family: "Gilroy";
 }
 
 /* Header */
@@ -173,7 +178,7 @@ header {
 }
 .header__menu-item:nth-last-child(2) {
     margin-right: 0;
-    font-size: 14px;
+    /* font-size: 14px; */
     line-height: 145%;
 }
 .header__contacts {
@@ -270,6 +275,8 @@ header {
     padding-bottom: 80px;
     position: relative;
     overflow: hidden;
+    background: url(../images/why_we.png) no-repeat center bottom;
+    background-size: contain;
 }
 .why__grid {
     margin-top: 30px;
@@ -357,7 +364,7 @@ header {
     position: absolute;
     left: 50%;
     top: 70%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 24%);
 }
 
 /* Catalog */
@@ -370,7 +377,7 @@ header {
 }
 .catalog__categories {
     display: grid;
-    grid-template-columns: repeat(9, auto);
+    grid-template-columns: repeat(7, 1fr);
     gap: 0.5rem;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -379,6 +386,9 @@ header {
     cursor: pointer;
     text-align: center;
     max-width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .catalog__categories-item__title {
     transition: all 0.4s;
@@ -390,11 +400,15 @@ header {
 .catalog__grid {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 230px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
 }
 .catalog__grid-item {
-    max-width: 230px;
+    /* max-width: 230px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .catalog__grid-item__hidden {
     display: none;
@@ -411,8 +425,8 @@ header {
     text-align: center;
 }
 .catalog__grid-item__image {
-    width: 230px;
-    height: 230px;
+    /* width: 230px;
+    height: 230px; */
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -479,7 +493,7 @@ header {
 
 /* Footer */
 footer {
-    padding: 40px;
+    padding: 20px;
 }
 .footer {
     display: flex;
@@ -556,7 +570,7 @@ footer {
 .request__call-container {
     border-radius: 10px;
     padding: 60px 40px;
-    max-width: 380px;
+    max-width: 300px;
     background: gray;
     position: relative;
     left: 50%;
@@ -685,11 +699,11 @@ footer {
     .header__contacts-phone a {
         font-size: 16px;
     }
-    .main__button {
+    /* .main__button {
         height: 40px;
         width: 180px;
         font-size: 12px;
-    }
+    } */
     .header__contacts-call {
         display: none;
     }
@@ -801,8 +815,9 @@ footer {
         margin-bottom: 30px;
     }
     .discount__image {
-        max-width: 290px;
-        top: 110%;
+        max-width: 500px;
+        width: 100%;
+        top: 90%;
     }
     .catalog__content .title {
         text-align: center !important;
@@ -825,7 +840,7 @@ footer {
         font-size: 12px;
     }
     .advantages__grid {
-        grid-template-columns: repeat(1, 320px);
+        grid-template-columns: repeat(1, 300px);
     }
 }
 @media (max-width: 480px) {
@@ -867,5 +882,11 @@ footer {
     .footer__contacts-phone {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .header__contacts-phone {
+        display: none;
     }
 }
