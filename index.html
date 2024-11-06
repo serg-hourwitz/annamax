@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/children.css" />
     <title>Дитячі солодощі</title>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="js/fbevents.js"></script>
+
     <script
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-4TX0EWYXSM"
@@ -143,17 +145,22 @@
           <nav class="header__menu">
             <ul class="header__menu-list">
               <li class="header__menu-item">
-                <a href="#why">Чому ми</a>
+                <a href="#why" data-i18n="why_we">Чому ми</a>
               </li>
               <li class="header__menu-item">
-                <a href="#discount">Отримати знижку</a>
+                <a href="#discount" data-i18n="discount">Отримати знижку</a>
               </li>
               <li class="header__menu-item">
-                <a href="#advantages">Наші переваги</a>
+                <a href="#advantages" data-i18n="advantages">Наші переваги</a>
               </li>
               <li class="header__menu-item">
-                <a href="#contacts">Контакти</a>
+                <a href="#contacts" data-i18n="contacts">Контакти</a>
               </li>
+              <select id="languageSwitcher">
+                <option value="ua">Українська</option>
+                <option value="en">English</option>
+              </select>
+
               <li class="header__menu-item mobile__button-hide">
                 <button
                   class="header__contacts-call-button main__button open__request-call"
@@ -1511,6 +1518,57 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.16.4/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script>
+      i18next.use(i18nextBrowserLanguageDetector).init(
+        {
+          fallbackLng: 'ua',
+          debug: true,
+          resources: {
+          ua: {
+          translation: {
+            why_we: 'Чому ми',
+            discount: 'Отримати знижку',
+            advantages: 'Наші переваги',
+            contacts: 'Контакти',
+          },
+        },
+
+        en: {
+          translation: {
+            why_we: 'Why we',
+            discount: 'Get discount',
+            advantages: 'Our advantages',
+            contacts: 'Contacts',
+          },
+        },
+        },
+          detection: {
+            order: ['localStorage', 'navigator'],
+            caches: ['localStorage'],
+          },
+        },
+        function (err, t) {
+          if (err) return console.error(err);
+          updateContent();
+        }
+      );
+
+      function updateContent() {
+        document.querySelectorAll('[data-i18n]').forEach(function (element) {
+          const key = element.getAttribute('data-i18n');
+          element.innerHTML = i18next.t(key);
+        });
+      }
+
+      document
+        .getElementById('languageSwitcher')
+        .addEventListener('change', function (e) {
+          const selectedLanguage = e.target.value;
+          i18next.changeLanguage(selectedLanguage, updateContent);
+        });
+    </script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
